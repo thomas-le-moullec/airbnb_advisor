@@ -46,6 +46,6 @@ What about a solution that can help futur owners to find the best investment bas
     * (Coming): Real Estate Market API: 
 
 ## Delivery phases:
-    * Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
+   * 1 - Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
     * The website will be used for datavisualization.
     * The open API will be exposing the data clean from data sets coming from http://insideairbnb.com
