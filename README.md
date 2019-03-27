@@ -26,7 +26,8 @@ What about a solution that can help futur owners to find the best investment bas
  
  Prediction:
   * The Basic prediction model will be based on 2 datasets, one describing the properties listed (106 criterias, E.g: Balcony, bathroom, location), one describing the renting calendar (Rate, prices, dates).
-  * Combining this two datasets to get the price for a specific type of appartment and the number of days rented over a specific period of time (t) http://insideairbnb.com/get-the-data.htmlwould give us a prediction of the potential income over the t period.
+  * Combining this two datasets to get the price for a specific type of appartment and the number of days rented over a specific period of time (t) would give us a prediction of the potential income over the t period.
+  * The predicted income for a period of time for a specific type of property would then be crossed with the investor criterias to find the optimal investment
 
 ## Vision
  * Based on investment criterias (Budget, ROI, City, Renting Period), give the best optimal investment (2 rooms, 1 bathroom, 1 balcony in this district).
@@ -35,14 +36,14 @@ What about a solution that can help futur owners to find the best investment bas
  * Solution that can manage investor properties automatically by interacting with Airbnb API based on the price prediction model and the current market situation.
 
 ## Project Technologies:
- * Amazon Web Services (S3, EC2, SQS, Lamdba, CloudFront, Route53, API Gateway)
- * Python 3.*
- * Nodejs 8.10
+    * Amazon Web Services (S3, EC2, SQS, Lamdba, CloudFront, Route53, API Gateway)
+    * Python 3.*
+    * Nodejs 8.10
  
 ## Data
- * Airbnb DataSets: http://insideairbnb.com/get-the-data.html
- * (Coming): Airbnb API: https://www.airbnb.com/partner
- * (Coming): Real Estate Market API: 
+    * Airbnb DataSets: http://insideairbnb.com/get-the-data.html
+    * (Coming): Airbnb API: https://www.airbnb.com/partner
+    * (Coming): Real Estate Market API: 
 
 ## Delivery phases:
     * Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
