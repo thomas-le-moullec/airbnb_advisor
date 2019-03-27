@@ -1,5 +1,7 @@
 # airbnb_advisor
 Airbnb big data project to help short terms renting investors.
+Website: https://thomas-lemoullec.com/index.html
+API: https://api.thomas-lemoullec.com
 
 ## Introduction and Concept
 ### Rise of Airbnb is changing the Real Estate game
