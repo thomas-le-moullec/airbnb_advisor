@@ -1,4 +1,4 @@
-# airbnb_advisor
+# Airbnb Advisor
 Airbnb big data project to help short terms renting investors.
 
 Website: https://thomas-lemoullec.com/index.html
@@ -29,6 +29,8 @@ Airbnb is growing fast as well as the complexity and opportunities of its market
 * Strict Regulations in Some Cities
 
 ## Solution: Airbnb Advisor
+### Executive Summary -
+#### 1. Expected Results - Features and Benefits:
 What about a solution that can help investors to find the best price for their real estate renting ?
  * E.g : Based on the history of the market prices for this specific type of property in this specific location at this exact date, the price could be increase by 21%
  
@@ -40,32 +42,37 @@ What about a solution that can help futur owners to find the best investment bas
   * The Basic prediction model will be based on 2 datasets, one describing the properties listed (106 criterias, E.g: Balcony, bathroom, location), one describing the renting calendar (Rate, prices, dates).
   * Combining this two datasets to get the price for a specific type of appartment and the number of days rented over a specific period of time (t) would give us a prediction of the potential income over the t period.
   * The predicted income for a period of time for a specific type of property would then be crossed with the investor criterias to find the optimal investment
-  
-### Project Technologies:
-    * Amazon Web Services (S3, EC2, SQS, Lamdba, RDS, CloudFront, Route53, API Gateway)
-    * Python 3.*
-    * Nodejs 8.10
- 
-### Data
-    * Airbnb DataSets: http://insideairbnb.com/get-the-data.html
-    * (Coming): Airbnb API: https://www.airbnb.com/partner
-    * (Coming): Real Estate Market API: 
 
-### RoadMap: Delivery phases
-   * 1 - Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
-    * The website will be used for datavisualization.
-    * The open API will be exposing the data clean from data sets coming from http://insideairbnb.com
 
-## Vision: The future might be like this
+#### 2. Vision: The future might be like this
  * Based on investment criterias (Budget, ROI, City, Renting Period), give the best optimal investment (2 rooms, 1 bathroom, 1 balcony in this district).
  * Forecast AWS to predict optimal price for a property (Based on property type and Time Series data of the last 5 years).
  * Real Time data with Dynamic DashBoard that can be connect with Alexa: "What is the optimal price today ?"
  * Solution that can manage investor properties automatically by interacting with Airbnb API based on the price prediction model and the current market situation.
+
+#### 3. RoadMap: Delivery phases
+    *1 - Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
+    ** The website will be used for datavisualization.
+    ** The open API will be exposing the data clean from data sets coming from http://insideairbnb.com
+  
+#### 4. Project Technologies:
+    * Amazon Web Services (S3, EC2, SQS, Lamdba, RDS, CloudFront, Route53, API Gateway)
+    * Python 3.*
+    * Nodejs 8.10
+    
+#### 5. Costs - Budget
  
+#### 6. Data sources
+    * Airbnb DataSets: http://insideairbnb.com/get-the-data.html
+    * (Coming): Airbnb API: https://www.airbnb.com/partner
+    * (Coming): Real Estate Market API: https://www.zillow.com/ , https://www.programmableweb.com/api/zilyo-vacation-rental, AirVestor
+    
  ## Frequently Asked Questions
  
  ## Customer Experience
 
  ## User Manual
- ### API Documentation
- ### Website
+  ### 1. Concepts
+  ### 2. How to user Airbnb Solution
+      1. API Documentation
+      2. Website
