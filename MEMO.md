@@ -77,11 +77,15 @@ Lambda: To build the API gateway. In the future, this can be exposed to other da
 ``` 
 CloudFront: 
 ``` 
-![alt text](https://raw.githubusercontent.com/thomas-le-moullec/airbnb_advisor/blob/dev/pm_resources/Airbnb_Advisor_Architecture_Final.png)
+![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Airbnb+Advisor+Architecture+Final.png)
 
 ## Costs - Budget
 Current costs are estimates for the protoype only.
-![alt text](https://raw.githubusercontent.com/thomas-le-moullec/airbnb_advisor/blob/dev/pm_resources/budget_prototype_airbnb.png)
+** Summarize of Prototype Budget: **
+![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/budget_prototype_airbnb.png)
+
+More Details about the Prototype Budget:
+https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budget+for+Airbnb+Advisor+Architecture.xlsx
 
 ## Data (as input)
     * Airbnb DataSets: http://insideairbnb.com/get-the-data.html
