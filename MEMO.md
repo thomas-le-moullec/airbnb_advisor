@@ -149,14 +149,14 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
    - Study of the existing
    - Definition of key features
    - Definition of Solution Architecture, Pipeline and future costs
-   - Design of clear RoadMap
+   - Design of clear RoadMap<br/>
    **Due Date:** 15/04/2019
    
  * 3. Deliver a solution able to find the optimal price for a specific asset
    - Business Understanding
    - Data Preparation
    - Data Transformation
-   - Modeling
+   - Modeling<br/>
    **Due Date:** 01/05/2019
  
  ## Frequently Asked Questions
