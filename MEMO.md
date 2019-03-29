@@ -89,8 +89,8 @@ Listings CSV Sample:
 
 ## Project Technologies and System architecture (Prototype)
 Current Technological for the prototype:
-    * Amazon Web Services (S3, EC2, SQS, Lamdba, CloudFront, Route53, API Gateway) (Hosted on Seoul region)
-    * Python 3.* | Nodejs 8.10
+ - Amazon Web Services (S3, EC2, SQS, Lamdba, CloudFront, Route53, API Gateway) (Hosted on Seoul region)
+ - Python 3.* | Nodejs 8.10
 
 **Details and Pipeline through AWS Services:**
 
@@ -139,10 +139,10 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
     -(Coming): Real Estate Mrket API: https://www.zillow.com/ , https://www.programmableweb.com/api/zilyo-vacation-rental, AirVestor
 
 ## Delivery phases and Future Work:
- * 1. Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
-  - The website will be used for datavisualization.<br/>
-  - The open API will be exposing the data clean from data sets coming from http://insideairbnb.com <br/>
-  - **Due Date:** 29/03/2019
+* 1. Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
+   - The website will be used for datavisualization.<br/>
+   - The open API will be exposing the data clean from data sets coming from http://insideairbnb.com <br/>
+   **Due Date:** 29/03/2019
  
 * 2. Deeper Business Understanding and project plan:
    - Study of Metrics and Data
@@ -150,14 +150,14 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
    - Definition of key features
    - Definition of Solution Architecture, Pipeline and future costs
    - Design of clear RoadMap
-   - **Due Date:** 15/04/2019
+   **Due Date:** 15/04/2019
    
  * 3. Deliver a solution able to find the optimal price for a specific asset
    - Business Understanding
    - Data Preparation
    - Data Transformation
    - Modeling
-   - **Due Date:** 01/05/2019
+   **Due Date:** 01/05/2019
  
  ## Frequently Asked Questions
  
