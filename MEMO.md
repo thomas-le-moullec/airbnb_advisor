@@ -21,8 +21,8 @@ More and more property investors in the housing market are investing in short-te
 Airbnb is offering a disruptive platform: Rent whenever you want your own place.
 
 The Airbnb concept is targeting different types of owners:
-* The non-professional owners who wish to rent their property or a room for a short term (E.g: When they are on vacations)
-* The professionals who are investing in short-term rental with Airbnb, they usually have several properties to rent.
+* **The non-professional owners who wish to rent their property** or a room for a short term (E.g: When they are on vacations)
+* **The professionals who are investing in short-term rental with Airbnb**, they usually have several properties to rent.
 
 From the research I have done so far, Airbnb is growing at a rapid speed. This also brings with it complexities and opportunities given the scale of operations. Overall, the insights I gathered include:
 
@@ -32,6 +32,15 @@ From the research I have done so far, Airbnb is growing at a rapid speed. This a
 * Strict Regulations in Some Cities
 
 ### Executive Summary - Solution
+
+**Problem:**
+ * The fast growing market is getting more and more complex and more competitive, finding the optimal price for owners is taking time and is not easy.
+ * Short term renting is full of opportunities for new investors, but finding the best property isn't easy and can be unexpected.
+ * More and more investors or agents are managing several properties, things are getting redundant and time consuming.
+ 
+**Targets:**
+ * The non-professional owners who wish to rent their property
+ * The Professionals investing in short-term rental properties as money-making machines
 
 **What about a solution that can help investors to find the best price for their real estate renting ?**
  * E.g : Based on the history of the market prices for this specific type of property in this specific location at this exact date, the price could be increase by 21%
@@ -88,16 +97,22 @@ More Details about the Prototype Budget:
 https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budget+for+Airbnb+Advisor+Architecture.xlsx
 
 ## Data (as input)
-    * Airbnb DataSets: http://insideairbnb.com/get-the-data.html
-    * (Coming): Airbnb API: https://www.airbnb.com/partner
-    * (Coming): Real Estate Market API: https://www.zillow.com/ , https://www.programmableweb.com/api/zilyo-vacation-rental, AirVestor
+    - Airbnb DataSets: http://insideairbnb.com/get-the-data.html
+    -(Coming): Airbnb API: https://www.airbnb.com/partner
+    -(Coming): Real Estate Mrket API: https://www.zillow.com/ , https://www.programmableweb.com/api/zilyo-vacation-rental, AirVestor
 
-## Delivery phases:
-   * 1 - Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
-    * The website will be used for datavisualization.
-    * The open API will be exposing the data clean from data sets coming from http://insideairbnb.com
-
- ## Future Work
+## Delivery phases and Future Work:
+1. Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
+  - The website will be used for datavisualization.<br/>
+  - The open API will be exposing the data clean from data sets coming from http://insideairbnb.com <br/>
+  - **Due Date:** 29/03/2019
+    
+2. Deliver a solution able to find the optimal price for a specific asset
+ - Business Understanding
+ - Data Preparation
+ - Data Transformation
+ - Modeling
+ - **Due Date:** 15/04/2019
  
  ## Frequently Asked Questions
  
@@ -105,13 +120,10 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
 
 _Thomas, <br/>
 
-
 ## License
-
 Created for the purposes of Amazon Interview. The data belongs with Inside Airbnb.
 
 ## Acknowledgments
-
 :+1: http://insideairbnb.com// <br/>
 :+1: AWS <br/>
 :+1: HKUST <br/>
