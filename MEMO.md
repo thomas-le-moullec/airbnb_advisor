@@ -153,7 +153,7 @@ https://cloudcraft.co/view/d618ff05-7d30-473e-9c88-a8686a03452d?key=g73drwWc45Gz
 - Would be more scalable and Cost Efficient with Lambda functions instead of EC2.
 - Monitoring and Alarms will be more precise in the future
 3. Failure Management
-- Database is backed up frequently and replicate
+- Database is backed up frequently and replicate, durability and reliability offered by Mutli AZ.
 - The Code can be more secure: Type of message in SQS and SQL Queries, QA needs to be done.
 - Image of the EC2 core backed up and used to restart a new instance, Volume is saved on EC2 Termination.
 #### Performance Efficiency
@@ -184,7 +184,7 @@ https://cloudcraft.co/view/d618ff05-7d30-473e-9c88-a8686a03452d?key=g73drwWc45Gz
 
 ## Costs - Budget (Prototype)
 Current costs are estimates for the protoype only.
-** Summarize of Prototype Budget: **
+**Summarize of Prototype Budget:**
 ![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/budget_prototype_airbnb.png)
 
 More Details about the Prototype Budget:
