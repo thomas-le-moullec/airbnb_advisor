@@ -11,4 +11,5 @@ sudo yum install postgresql
 sudo yum install sqlalchemy
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
+bash
 nvm install node
