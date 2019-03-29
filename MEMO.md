@@ -124,6 +124,8 @@ Route53: Alias to our reserved DNS for the API and the Website.
 ```
 
 ![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Airbnb+Advisor+Architecture+Final.png)
+Explore the CloudCraft Architecture
+https://cloudcraft.co/view/d618ff05-7d30-473e-9c88-a8686a03452d?key=g73drwWc45GzplVWyPniPw
 
 ## Costs - Budget (Prototype)
 Current costs are estimates for the protoype only.
