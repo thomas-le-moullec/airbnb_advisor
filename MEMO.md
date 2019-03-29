@@ -31,7 +31,19 @@ From the research I have done so far, Airbnb is growing at a rapid speed. This a
 * Renters Look for Unconventional Accommodation
 * Strict Regulations in Some Cities
 
-### Executive Summary - Solution
+### Airbnb Statistics:
+ ![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Airbnb+Statistics+for+Target+Market+Demographics+and+Growth+++iPropertyManagement.com.png)
+ 
+    - 4 million Airbnb listings worldwide.
+    - 191 Countries, 65000 Cities
+    - About 500,000 stays per night
+    - Airbnb’s value worldwide is $38 billion
+    - 650,000 hosts on Airbnb
+    - Average of 3 listings per host
+
+More Statistics here: https://ipropertymanagement.com/airbnb-statistics/    
+
+### Executive Summary - Solution (Prototype)
 
 **Problem:**
  * The fast growing market is getting more and more complex and more competitive, finding the optimal price for owners is taking time and is not easy.
@@ -54,41 +66,66 @@ From the research I have done so far, Airbnb is growing at a rapid speed. This a
   * Combining this two datasets to get the price for a specific type of appartment and the number of days rented over a specific period of time (t) would give us a prediction of the potential income over the t period.
   * The predicted income for a period of time for a specific type of property would then be crossed with the investor criterias to find the optimal investment
 
+Calendar CSV Sample:
+![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Calendar_csv_sample.png)
+Listings CSV Sample:
+![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Listings_csv_sample.png)
+
 ## Vision
  * Based on investment criterias (Budget, ROI, City, Renting Period), give the best optimal investment (2 rooms, 1 bathroom, 1 balcony in this district).
  * Forecast AWS to predict optimal price for a property (Based on property type and Time Series data of the last 5 years).
  * Real Time data with Dynamic DashBoard that can be connect with Alexa: "What is the optimal price today ?"
  * Solution that can manage investor properties automatically by interacting with Airbnb API based on the price prediction model and the current market situation.
 
- ## Customer Experience - User Manual
+ ## Customer Experience - User Manual (Prototype)
   ### 1. Concepts
   ### 2. How to use Airbnb Solution
       1. API Documentation
+      - https://api.thomas-lemoullec.com/dev/listings/{city}
+      - https://api.thomas-lemoullec.com/dev/calendar/{city}
+      - https://api.thomas-lemoullec.com/dev/dashboard/{city}
       2. Website
+      - https://thomas-lemoullec.com/index.html
 
-## Project Technologies and System architecture
+## Project Technologies and System architecture (Prototype)
+Current Technological for the prototype:
     * Amazon Web Services (S3, EC2, SQS, Lamdba, CloudFront, Route53, API Gateway) (Hosted on Seoul region)
-    * Python 3.*
-    * Nodejs 8.10
+    * Python 3.* | Nodejs 8.10
+
+**Details and Pipeline through AWS Services:**
 
 ```    
-S3: Stores website and is also used to upload the original CSV that we receive from Airbnb
+S3: CSV (Dataset) is uploaded on a S3 Standard bucket, this new upload will trigger a SQS Queue. 
 ``` 
 ``` 
-EC2: Server used for pre-processing
+SQS: Queuing system built used to push the new uploaded file details. A new message in this queue means a new dataset to process, in brief a new job needs to be done.
 ``` 
 ``` 
-SQS: Queuing system built to digest the CSV, push it eventually to POSTGRES version x
+EC2: Server c5d.2xlarge On Spot is used as a core of the prototype, into an auto-scaling group changing from 1 to 3 machines. This machine on this specific biling gives us good computation power for a low price and a lot of flexibility: Adapated to prototype.
+Server is doing a long-polling on the SQS queue (Nodejs) and get the name of the new uploaded dataset in the Stand S3 bucket. The EC2 instance will download the csv file and preprocess it with Python.<br/>
+For the purpose of the prototype, the csv file cleaned is stored in a IA S3 Bucket.
+The original CSV file from the S3 bucket is then removed by the EC2 instance.
+The Cleaned data will then be inserted within a PostgreSQL DataBase (Create / Update Table, Insert and SQL operations to insert relevant information), this is done automatically based on the name of the file (City and date).
+``` 
+```
+RDS: A PostgreSQL Database on a db.t2.medium 100 GB SSD Storing the Relevant information from the dataSets. Mutli AZ, Encrypted and Read Replica.
+```
+``` 
+Lambda and API Gateway: To build the Open API. Lambda are coded in Nodejs. "Dev" is the only API stage available.
 ``` 
 ``` 
-Lambda: To build the API gateway. In the future, this can be exposed to other data providers.
+CloudFront: Used the CDN to distribute the Static Website and the Open API with more efficiency.
+```
 ``` 
+S3 thomas.le-moullec.com: Public Bucket to serve the Website displaying Data Visualisation.
 ``` 
-CloudFront: 
-``` 
+```
+Route53: Alias to our reserved DNS for the API and the Website. 
+```
+
 ![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Airbnb+Advisor+Architecture+Final.png)
 
-## Costs - Budget
+## Costs - Budget (Prototype)
 Current costs are estimates for the protoype only.
 ** Summarize of Prototype Budget: **
 ![alt text](https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/budget_prototype_airbnb.png)
@@ -102,17 +139,25 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
     -(Coming): Real Estate Mrket API: https://www.zillow.com/ , https://www.programmableweb.com/api/zilyo-vacation-rental, AirVestor
 
 ## Delivery phases and Future Work:
-1. Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
+ * 1. Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
   - The website will be used for datavisualization.<br/>
   - The open API will be exposing the data clean from data sets coming from http://insideairbnb.com <br/>
   - **Due Date:** 29/03/2019
-    
-2. Deliver a solution able to find the optimal price for a specific asset
- - Business Understanding
- - Data Preparation
- - Data Transformation
- - Modeling
- - **Due Date:** 15/04/2019
+ 
+* 2. Deeper Business Understanding and project plan:
+   - Study of Metrics and Data
+   - Study of the existing
+   - Definition of key features
+   - Definition of Solution Architecture, Pipeline and future costs
+   - Design of clear RoadMap
+   - **Due Date:** 15/04/2019
+   
+ * 3. Deliver a solution able to find the optimal price for a specific asset
+   - Business Understanding
+   - Data Preparation
+   - Data Transformation
+   - Modeling
+   - **Due Date:** 01/05/2019
  
  ## Frequently Asked Questions
  
