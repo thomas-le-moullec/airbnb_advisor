@@ -127,6 +127,61 @@ Route53: Alias to our reserved DNS for the API and the Website.
 Explore the CloudCraft Architecture
 https://cloudcraft.co/view/d618ff05-7d30-473e-9c88-a8686a03452d?key=g73drwWc45GzplVWyPniPw
 
+### Well-Architected Framework and Standards applied for Airbnb Prototype
+
+#### Security
+1. Data Protection:
+- Transit: API and Website are using SSL / HTTPS
+- Rest: Database and buckets are encrypted
+
+2. Privilege management:
+- Root Account protected with MFA (Multi Factor Authentification)
+- Groups: Dev Account with SDK and Console Access (Strict and Organised groups will be created once developers will join the project)
+- Roles: used within IAM. Specific role for the EC2 instance and Specific role for the lambda functions. Policies restricted as much as possible for the SQS, S3, EC2 and Lambda.
+- Credentials: Currently only stored in environment variable and not encrypted. (AWS Key Management Service in Future)
+3. Infrastructure Protection:
+- RDS Inbound Limited to PostgreSQL Port from Role attributed to EC2.
+- EC2 only reachable through SSH
+4. Detective Controls:
+- CloudWatch DashBoard to present resources metrics over time
+- CloudWatch Alarm to trigger Scaling In or Scaling out of the EC2 instances
+#### Reliability
+1. Foundations
+- Not really applicable for the prototype. Would need to deal with SQL and Lambda limits
+2. Change Management
+- So far the system is quite 'rigid' except the AutoScaling Group of the EC2 Instance which is scaling based on CPU.
+- Would be more scalable and Cost Efficient with Lambda functions instead of EC2.
+- Monitoring and Alarms will be more precise in the future
+3. Failure Management
+- Database is backed up frequently and replicate
+- The Code can be more secure: Type of message in SQS and SQL Queries, QA needs to be done.
+- Image of the EC2 core backed up and used to restart a new instance, Volume is saved on EC2 Termination.
+#### Performance Efficiency
+1. Compute
+ - Appropriate Type of EC2 instance with Autoscaling depending on charge (Data Mining incoming needs large compute power)
+2. Storage
+ - Current Prototype does not need a proper storage. Using S3 with Fast Transfer Acceleration is useful.
+ - Once the Features will be precised, needs to ensure that the storage will be appropriate over time.
+3. Database
+ - Monitor Database
+ - Read Replica on Database
+4. Space-time trade-off
+ - CloudFront CDN for Caching and Edge performance (Important for Website and Open API)
+#### Cost Optimization
+1. Matched supply and demand / Cost-effective resources
+ - On Spot with AutoScaling is a good ration price / power
+ - Database could be reviewed based on future features
+ - Lambda functions with API Gateway is the most optimize choice for an API.
+2. Keep an eye on Spendings
+ - No Access Control yet
+ - Not Monitoring enough - Need some precise tags to track
+ - Optimizing termination of resources for the prototype
+3. Optimize over time
+ - Think Long term on the project to choose the best services and keep on eye on new service
+#### Operational Excellence
+ - Prototype is not yet really robust but not really needed as no 100% Available Service needed.
+ - Need to monitor and prepare to respond to unplanned operational events.
+
 ## Costs - Budget (Prototype)
 Current costs are estimates for the protoype only.
 ** Summarize of Prototype Budget: **
@@ -141,6 +196,7 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
     -(Coming): Real Estate Mrket API: https://www.zillow.com/ , https://www.programmableweb.com/api/zilyo-vacation-rental, AirVestor
 
 ## Delivery phases and Future Work:
+* 0. Project requirements From Amazon on the **22/03/2019**
 * 1. Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
    - The website will be used for datavisualization.<br/>
    - The open API will be exposing the data clean from data sets coming from http://insideairbnb.com <br/>
@@ -160,6 +216,12 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
    - Data Transformation
    - Modeling<br/>
    **Due Date:** 01/05/2019
+ 
+ 
+## Human Resources and Efforts:
+Phase 0 - 1
+* 1 person - Thomas LE MOULLEC
+* Effort: 4 days
  
  ## Frequently Asked Questions
  
