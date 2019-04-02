@@ -200,7 +200,7 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
 * 1. Build Simple architecture to expose an open API and a website (Sampling: 3 cities; Berlin, Paris, Hong Kong)
    - The website will be used for datavisualization.<br/>
    - The open API will be exposing the data clean from data sets coming from http://insideairbnb.com <br/>
-   **Due Date:** 29/03/2019
+   **Due Date:** 29/03/2019 - **Passed**
  
 * 2. Deeper Business Understanding and project plan:
    - Study of Metrics and Data
