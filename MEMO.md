@@ -2,10 +2,10 @@
 This is a Memo / ReadMe for an **Airbnb** data mining and predictions prototype (web-based) that is entirely run and hosted on **AWS Cloud** to help short terms renters and renting investors.
 
 ```
-Prototype Website: https://thomas-lemoullec.com/index.html
+Prototype Website: https://thomas-lemoullec.com/projects/airbnb-advisor/index.html
 ```
 ```
-API: https://api.thomas-lemoullec.com
+API: https://api.thomas-lemoullec.com/airbnb-advisor/
 ```
 
 ## Industry Context
@@ -81,11 +81,11 @@ Listings CSV Sample:
   ### 1. Concepts
   ### 2. How to use Airbnb Solution
       1. API Documentation
-      - https://api.thomas-lemoullec.com/dev/listings/{city}
-      - https://api.thomas-lemoullec.com/dev/calendar/{city}
-      - https://api.thomas-lemoullec.com/dev/dashboard/{city}
+      - https://api.thomas-lemoullec.com/airbnb-advisor/listings/{city}
+      - https://api.thomas-lemoullec.com/airbnb-advisor/calendar/{city}
+      - https://api.thomas-lemoullec.com/airbnb-advisor/dashboard/{city}
       2. Website
-      - https://thomas-lemoullec.com/index.html
+      - https://thomas-lemoullec.com/projects/airbnb-advisor/index.html
 
 ## Project Technologies and System architecture (Prototype)
 Current Technological for the prototype:
@@ -95,7 +95,7 @@ Current Technological for the prototype:
 **Details and Pipeline through AWS Services:**
 
 ```    
-S3: CSV (Dataset) is uploaded on a S3 Standard bucket, this new upload will trigger a SQS Queue. 
+S3: CSV (Dataset) is uploaded on a S3 Standard bucket, this new upload will trigger a SQS Queue.
 ``` 
 ``` 
 SQS: Queuing system built used to push the new uploaded file details. A new message in this queue means a new dataset to process, in brief a new job needs to be done.
@@ -217,11 +217,21 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
    - Modeling<br/>
    **Due Date:** 01/05/2019
  
+ ## Deployment and Versioning:
+ For the prototype, the versioning of the solution has not been a focus. For the maintenability and evolutivity of the solution, an automatic deployment and robust versioning should be establish.
+ **Prototype Versioning:**
+ * Website: AWS CodePipeline and CodeDeploy to automatically retrieve the source code for a static website from GitHub and deploy that website onto S3
+ * API: Manually upload from Lambda to Github.
+ * Server-Side (EC2 for Data Processing): Manually Upload python scripts and nodejs programs on github.
  
 ## Human Resources and Efforts:
 Phase 0 - 1
 * 1 person - Thomas LE MOULLEC
 * Effort: 4 days
+
+Phase 2:
+* 1 person - Thomas LE MOULLEC
+* Effort: Undefined
  
  ## Frequently Asked Questions
  
