@@ -1,0 +1,152 @@
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 900px;
+}
+
+button {
+  color: #494949 !important;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border: 4px solid #494949 !important;
+  border-radius: 6px;
+  width: 200px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  color: 0 !important;
+  background-color: rgba(255, 255, 255, 1);
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+
+.berlin {
+  background-image: url(../images/berlin.jpg);
+}
+
+.paris {
+  background-image: url(../images/paris.jpg);
+}
+
+.hong-kong {
+  background-image: url(../images/hong-kong.jpg);
+}
+
+/* Generic */
+body {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  font-family: "fairplex-wide";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  position: relative;
+  z-index: 2;
+  color: #000 !important;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+.data-header{
+  padding-top: 1px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.data-title {
+    font-size: 15px;
+}
+
+.image {
+  height: 105vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+
+}
+
+.img-header-data {
+  margin-top: -130px;
+}
+
+.choice-button {
+  margin-top: 30px;
+}
+
+.btn-data {
+  padding: 5px;
+}
+
+.chart-container {
+  width: 300px;
+  align-items: center;
+  height: 200px;
+  margin-left: calc(50% - 150px);
+}
+
+.container {
+  width: 300px;
+  align-items: center;
+  height: 200px;
+  margin-left: 85px;
+  color: #555;
+}
+
+h2 {
+  margin: 0 !important;
+  text-transform:capitalize;
+}
+
+.hosts {
+  font-size: 12px;
+    padding-top: 10px;
+}
+
+.data-grid {
+  padding-top: 35px;
+  display: grid;
+    grid-template-areas: 'a a';
+}
+
+.data-container {
+  width: 1000px;
+  height: 83%;
+  margin-left: calc(50% - 500px);
+  background-color: rgba(250, 250, 250, 0.95);
+  padding: 20px;
+  border: 3px solid #333333;
+  position: relative;
+  margin-top: 10px;
+}
