@@ -220,7 +220,7 @@ https://s3.ap-northeast-2.amazonaws.com/airbnb-advisor-prototype-resources/Budge
  ## Deployment and Versioning:
  For the prototype, the versioning of the solution has not been a focus. For the maintenability and evolutivity of the solution, an automatic deployment and robust versioning should be establish.
  **Prototype Versioning:**
- * Website: AWS CodePipeline and CodeDeploy to automatically retrieve the source code for a static website from GitHub and deploy that website onto S3
+ * Website: AWS CodePipeline and CodeDeploy to automatically retrieve the source code for a static website from GitHub and deploy that website onto S3.
  * API: Manually upload from Lambda to Github.
  * Server-Side (EC2 for Data Processing): Manually Upload python scripts and nodejs programs on github.
  
@@ -241,6 +241,9 @@ _Thomas, <br/>
 
 ## License
 Created for the purposes of Amazon Interview. The data belongs with Inside Airbnb.
+
+## Reference
+S3 Website Versioning: https://medium.freecodecamp.org/how-to-continuously-deploy-a-static-website-in-style-using-github-and-aws-3df7ecb58d9c
 
 ## Acknowledgments
 :+1: http://insideairbnb.com// <br/>
