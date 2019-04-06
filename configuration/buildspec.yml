@@ -10,7 +10,7 @@ phases:
      - ls
  build:
    commands:
-     - aws s3 sync --delete "s3://thomas-lemoullec.com/projects/airbnb-advisor/"
+     - aws s3 sync --delete website/ "s3://thomas-lemoullec.com/projects/airbnb-advisor/"
  post_build:
    commands:
      - echo "post_build step"
