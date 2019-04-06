@@ -6,6 +6,8 @@ phases:
  pre_build:
    commands:
      - echo "pre_build step"
+     - pwd
+     - ls
  build:
    commands:
      - aws s3 sync --delete "s3://thomas-lemoullec.com/projects/airbnb-advisor/"
