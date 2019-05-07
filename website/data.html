@@ -1,12 +1,11 @@
 <!doctype html>
 <html class="no-js" lang="">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<img class="image" src="" alt="Berlin" id="bg">
+<img class="image" src="" alt="Amsterdam" id="bg">
 <head>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
@@ -20,7 +19,7 @@
   <header class="data-header">
     <h1 class="data-title"><b>AIRBNB ADVISOR</b></h1>
     <div>
-      <a href="data.html?city=berlin"><button class="btn-data">Berlin</button></a>
+      <a href="data.html?city=amsterdam"><button class="btn-data">Amsterdam</button></a>
       <a href="data.html?city=hong-kong"><button class="btn-data">Hong Kong</button></a>
       <a href="data.html?city=paris"><button class="btn-data">Paris</button></a>
     </div>
@@ -32,24 +31,28 @@
     <div class="chart-container"><canvas id="bar-chart-horizontal"></canvas></div>
     <div class="chart-container"><canvas id="doughnut-chart"></canvas></div>
     <div class="container">
-      <h3>Activity :</h3>
-      <div>
-      <p id="host_nbr"><p/>
-      <p id="price_night"><p/>
-      <p id="review_avg"><p/>
-      <p id="income"><p/>
-      </div>
-    </div>
-    <div class="container">
     <canvas id="bar-chart"></canvas>
       <div class="hosts">
       <p id="percent"><p/>
       </div>
     </div>
-    <div class="container"><canvas id="bar-chart-horizontal"></canvas></div>
+    <div class="container">
+      <h3>Activity :</h3>
+      <div>
+      <p id="price_night"><p/>
+      <p id="review_avg"><p/>
+      <p id="income"><p/>
+      </div>
+    </div>
+    <div id="bedCorr" style="width:400px;height:300px;"></div>
+    <div id="bedroomCorr" style="width:400px;height:300px;"></div>
+    <div id="bathCorr" style="width:400px;height:300px;"></div>
+    <div id="ratio" style="width:400px;height:300px;"></div>
+
   </div>
   </div>
   <script src="js/Chart.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="js/data.js"></script>
 </body>
 

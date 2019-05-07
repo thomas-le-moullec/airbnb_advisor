@@ -7,7 +7,237 @@ function getUrlParameter(name) {
     : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function displayRoomTypes(fields) {
+function fail() {
+  document.getElementById("ct").innerHTML = "No Data to Display";
+}
+
+function plotPriceBedCorrelation(data) {
+  var xData = [1, 2, 3, 4, 5, 6, 7, 8];
+  var yData = [
+    data.filter(t => t.beds == 1).map(t => t.price),
+    data.filter(t => t.beds == 2).map(t => t.price),
+    data.filter(t => t.beds == 3).map(t => t.price),
+    data.filter(t => t.beds == 4).map(t => t.price),
+    data.filter(t => t.beds == 5).map(t => t.price),
+    data.filter(t => t.beds == 6).map(t => t.price),
+    data.filter(t => t.beds == 7).map(t => t.price),
+    data.filter(t => t.beds == 8).map(t => t.price)
+  ];
+  var colors = [
+    "rgba(93, 164, 214, 0.5)",
+    "rgba(255, 144, 14, 0.5)",
+    "rgba(44, 160, 101, 0.5)",
+    "rgba(255, 65, 54, 0.5)",
+    "rgba(207, 114, 255, 0.5)",
+    "rgba(127, 96, 0, 0.5)",
+    "rgba(255, 140, 184, 0.5)",
+    "rgba(79, 90, 117, 0.5)"
+  ];
+
+  var data = [];
+
+  for (var i = 0; i < xData.length; i++) {
+    var result = {
+      type: "box",
+      y: yData[i],
+      name: xData[i],
+      fillcolor: "cls",
+      marker: {
+        size: 2
+      },
+      line: {
+        width: 1
+      }
+    };
+    data.push(result);
+  }
+
+  layout = {
+    title: "Number of Beds",
+    yaxis: {
+      range: [0, 800],
+      title: "price"
+    },
+
+    margin: {
+      l: 50,
+      r: 30,
+      b: 30,
+      t: 80
+    },
+    paper_bgcolor: "rgb(243, 243, 243)",
+    plot_bgcolor: "rgb(243, 243, 243)",
+    showlegend: false
+  };
+  Plotly.newPlot("bedCorr", data, layout);
+}
+
+function plotPriceBedroomsCorrelation(data) {
+  var xData = [1, 2, 3, 4, 5, 6];
+  var yData = [
+    data.filter(t => t.bedrooms == 1).map(t => t.price),
+    data.filter(t => t.bedrooms == 2).map(t => t.price),
+    data.filter(t => t.bedrooms == 3).map(t => t.price),
+    data.filter(t => t.bedrooms == 4).map(t => t.price),
+    data.filter(t => t.bedrooms == 5).map(t => t.price),
+    data.filter(t => t.bedrooms == 6).map(t => t.price)
+  ];
+  var colors = [
+    "rgba(93, 164, 214, 0.5)",
+    "rgba(255, 144, 14, 0.5)",
+    "rgba(44, 160, 101, 0.5)",
+    "rgba(255, 65, 54, 0.5)",
+    "rgba(207, 114, 255, 0.5)",
+    "rgba(127, 96, 0, 0.5)",
+    "rgba(255, 140, 184, 0.5)",
+    "rgba(79, 90, 117, 0.5)"
+  ];
+
+  var data = [];
+
+  for (var i = 0; i < xData.length; i++) {
+    var result = {
+      type: "box",
+      y: yData[i],
+      name: xData[i],
+      fillcolor: "cls",
+      marker: {
+        size: 2
+      },
+      line: {
+        width: 1
+      }
+    };
+    data.push(result);
+  }
+
+  layout = {
+    title: "Number of Bedrooms",
+    yaxis: {
+      range: [0, 800],
+      title: "price"
+    },
+
+    margin: {
+      l: 50,
+      r: 30,
+      b: 30,
+      t: 80
+    },
+    paper_bgcolor: "rgb(243, 243, 243)",
+    plot_bgcolor: "rgb(243, 243, 243)",
+    showlegend: false
+  };
+  Plotly.newPlot("bedroomCorr", data, layout);
+}
+
+function plotPriceBathroomsCorrelation(data) {
+  var xData = [1, 2, 3, 4, 5, 6];
+
+  var yData = [
+    data.filter(t => t.bathrooms == 1).map(t => t.price),
+    data.filter(t => t.bathrooms == 2).map(t => t.price),
+    data.filter(t => t.bathrooms == 3).map(t => t.price),
+    data.filter(t => t.bathrooms == 4).map(t => t.price),
+    data.filter(t => t.bathrooms == 5).map(t => t.price),
+    data.filter(t => t.bathrooms == 6).map(t => t.price)
+  ];
+  var colors = [
+    "rgba(93, 164, 214, 0.5)",
+    "rgba(255, 144, 14, 0.5)",
+    "rgba(44, 160, 101, 0.5)",
+    "rgba(255, 65, 54, 0.5)",
+    "rgba(207, 114, 255, 0.5)",
+    "rgba(127, 96, 0, 0.5)",
+    "rgba(255, 140, 184, 0.5)",
+    "rgba(79, 90, 117, 0.5)"
+  ];
+
+  var data = [];
+
+  for (var i = 0; i < xData.length; i++) {
+    var result = {
+      type: "box",
+      y: yData[i],
+      name: xData[i],
+      fillcolor: "cls",
+      marker: {
+        size: 2
+      },
+      line: {
+        width: 1
+      }
+    };
+    data.push(result);
+  }
+
+  layout = {
+    title: "Number of Bathrooms",
+    yaxis: {
+      range: [0, 800],
+      title: "price"
+    },
+
+    margin: {
+      l: 50,
+      r: 30,
+      b: 30,
+      t: 80
+    },
+    paper_bgcolor: "rgb(243, 243, 243)",
+    plot_bgcolor: "rgb(243, 243, 243)",
+    showlegend: false
+  };
+  Plotly.newPlot("bathCorr", data, layout);
+}
+
+function plotRatioCorrelation(data) {
+  var yData = []
+  var xData = []
+  for (var i = 75; i < 101; ++i) {
+    xData.push(i)
+    yData.push(data.filter(t => t.review_scores_rating == i).map(t => t.renting_ratio))
+  }
+
+  var data = [];
+
+  for (var i = 0; i < xData.length; i++) {
+    var result = {
+      type: "box",
+      y: yData[i],
+      name: xData[i],
+      fillcolor: "cls",
+      marker: {
+        size: 2
+      },
+      line: {
+        width: 1
+      }
+    };
+    data.push(result);
+  }
+  console.log(data)
+  layout = {
+    title: "Review Score",
+    yaxis: {
+      range: [0, 1],
+      title: "ratio"
+    },
+
+    margin: {
+      l: 50,
+      r: 30,
+      b: 30,
+      t: 80
+    },
+    paper_bgcolor: "rgb(243, 243, 243)",
+    plot_bgcolor: "rgb(243, 243, 243)",
+    showlegend: false
+  };
+  Plotly.newPlot("ratio", data, layout);
+}
+
+function displayRoomTypes(dta) {
   new Chart(document.getElementById("bar-chart-horizontal"), {
     type: "horizontalBar",
     data: {
@@ -16,9 +246,9 @@ function displayRoomTypes(fields) {
         {
           backgroundColor: ["#0A0", "#AA0", "#A00"],
           data: [
-            fields.entire_home_number,
-            fields.private_room_number,
-            fields.shared_room_number
+            dta.filter(d => d.room_type === 'Entire').length,
+            dta.filter(d => d.room_type === 'Room').length,
+            dta.filter(d => d.room_type === 'Shared').length
           ]
         }
       ]
@@ -27,13 +257,16 @@ function displayRoomTypes(fields) {
       legend: {display: false},
       title: {
         display: true,
-        text: "Room type"
+        text: "Room type on a 1000 rooms sample"
       }
     }
   });
 }
 
-function displayRoomAvailability(fields) {
+const average = arr => arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
+
+function displayRoomAvailability(dta) {
+  mean = average(dta.map(d => d.renting_ratio))
   new Chart(document.getElementById("doughnut-chart"), {
     type: "doughnut",
     data: {
@@ -42,8 +275,8 @@ function displayRoomAvailability(fields) {
         {
           backgroundColor: ["#0A0", "#A00"],
           data: [
-            fields.available_listing_average,
-            100 - fields.available_listing_average
+            ((1 - mean) * 100).toFixed(2),
+            (mean * 100).toFixed(2)
           ]
         }
       ]
@@ -57,7 +290,7 @@ function displayRoomAvailability(fields) {
   });
 }
 
-function displayHostsRooms(fields) {
+function displayHostsRooms(dta) {
   new Chart(document.getElementById("bar-chart"), {
     type: "bar",
     data: {
@@ -72,11 +305,11 @@ function displayHostsRooms(fields) {
             "#c45850"
           ],
           data: [
-            fields.host_with_one_listing_number,
-            fields.host_with_two_listing_number,
-            fields.host_with_three_listing_number,
-            fields.host_with_four_listing_number,
-            fields.host_with_five_listing_number
+            dta.filter(d => d.host_total_listings_count == 1).length,
+            dta.filter(d => d.host_total_listings_count == 2).length,
+            dta.filter(d => d.host_total_listings_count == 3).length,
+            dta.filter(d => d.host_total_listings_count == 4).length,
+            dta.filter(d => d.host_total_listings_count == 5).length
           ]
         }
       ]
@@ -85,52 +318,48 @@ function displayHostsRooms(fields) {
       legend: {display: false},
       title: {
         display: true,
-        text: "Listings per Host"
+        text: "Number of listings per host on a 1000 rooms sample"
       }
     }
   });
 }
 
 function setInnerHtml(fields) {
-  document.getElementById("listings").innerHTML =
-    fields.listing_number + " listings";
-  document.getElementById("host_nbr").innerHTML = fields.host_number + " hosts";
   document.getElementById("price_night").innerHTML =
-    fields.average_price.toFixed(2) + "$ by night (average)";
+    "The average price per night is " + average(fields.map(f => f.price)).toFixed(2);
   document.getElementById("review_avg").innerHTML =
-    fields.review_per_month_average.toFixed(2) + " reviews per month";
+    "The mean review score is "+ average(fields.map(f => f.review_scores_rating)).toFixed(2);
   document.getElementById("income").innerHTML =
-    fields.estimated_income.toFixed(2) + "$ of estimated monthly income";
-  const total = (fields.single_listing_number / fields.listing_number) * 100;
-  document.getElementById("percent").innerHTML =
-    total.toFixed(2) + "% of single listings";
-}
-
-function fail() {
-  document.getElementById("ct").innerHTML = "No Data to Display";
+    "The estimated income over a year for a property is " + average(fields.map(f => f.price * f.renting_ratio * 365)).toFixed(2);
 }
 
 (function() {
   const city = getUrlParameter("city");
-  if (!city)
-    return fail()
-  const url = "https://api.thomas-lemoullec.com/airbnb-advisor/dashboard/" + (city === "hong-kong" ? "hk" : city.substring(0, 2))
+  if (!city) return fail();
+  const url =
+    "https://api.thomas-lemoullec.com/airbnb-advisor/dashboard/" +
+    (city === "hong-kong" ? "hk" : city.substring(0, 2)) +
+    "?fields=id,beds,price,bedrooms,bathrooms,renting_ratio,review_scores_rating,room_type,host_total_listings_count";
   axios
     .get(url)
     .then(function(response) {
-      if (!response || !response.data)
-        return fail()
+      console.log(response);
+      if (!response || !response.data) return fail();
       document.getElementById("bg").src = "./images/" + city + ".jpg";
+      plotPriceBedCorrelation(response.data);
+      plotPriceBedroomsCorrelation(response.data)
+      plotPriceBathroomsCorrelation(response.data)
+      plotRatioCorrelation(response.data)
+      displayRoomTypes(response.data);
+      displayRoomAvailability(response.data);
+      displayHostsRooms(response.data);
+      setInnerHtml(response.data);
       document.getElementById("city").innerHTML =
-          city === "hong-kong" ? "hong kong" : city;
+        city === "hong-kong" ? "hong kong" : city;
       const fields = response.data[0];
-      displayRoomTypes(fields);
-      displayRoomAvailability(fields);
-      displayHostsRooms(fields);
-      setInnerHtml(fields);
-
     })
     .catch(function(error) {
-      fail()
+      console.log(error);
+      fail();
     });
 })();
