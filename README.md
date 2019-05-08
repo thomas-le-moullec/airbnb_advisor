@@ -240,7 +240,7 @@ Phase 2:
 _Thomas, <br/>
 
 ## License
-Created for the purposes of Amazon Interview. The data belongs with Inside Airbnb.
+The data belongs with Inside Airbnb.
 
 ## Reference
 S3 Website Versioning: https://medium.freecodecamp.org/how-to-continuously-deploy-a-static-website-in-style-using-github-and-aws-3df7ecb58d9c
