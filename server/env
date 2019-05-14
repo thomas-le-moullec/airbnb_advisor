@@ -1,0 +1,6 @@
+DBNAME=tslemoullec_airbnb_db
+DBUSER=tslemoullec
+DBPWD=tslemoullec
+DBPORT=5432
+DBHOST=tslemoullec-airbnb-encrypted.cvdqmkjtxp4l.ap-northeast-2.rds.amazonaws.com
+QUEUE_URL="https://sqs.ap-northeast-2.amazonaws.com/426851545615/newDataSetAvailable"
