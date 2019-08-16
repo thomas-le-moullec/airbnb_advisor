@@ -11,6 +11,9 @@ phases:
  build:
    commands:
      - aws s3 sync --delete website/ "s3://thomas-lemoullec.com/projects/airbnb-advisor/"
+     - aws s3 cp "website/index.html" "s3://thomas-lemoullec.com/"
+     - aws s3 cp "website/index.html" "s3://thomas-lemoullec.com/projects"
+     - aws s3 cp "website/index.html" "s3://thomas-lemoullec.com/projects/airbnb-advisor"
  post_build:
    commands:
      - echo "post_build step"
