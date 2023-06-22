@@ -14,6 +14,6 @@
  "author": "Peter Hanssens",
  "license": "ISC",
  "dependencies": {
-  "pg": "^6.1.2"
+  "pg": "^8.11.0"
  }
 }
